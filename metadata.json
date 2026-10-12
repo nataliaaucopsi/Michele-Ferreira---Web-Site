@@ -1,0 +1,6 @@
+{
+  "name": "Michele Psicóloga Clínica · CRP 06/209038",
+  "description": "Psicoterapia online e presencial para adolescentes, adultos e idosos. Um espaço seguro de escuta, acolhimento e reflexão com a psicóloga clínica Michele.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
