@@ -3,9 +3,10 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig(({ command }) => {
   return {
-    base: '/Michele-Ferreira---Web-Site/',
+    // Configurado para GitHub Pages: https://nataliaaucopsi.github.io/Michele-Ferreira---Web-Site/
+    base: process.env.VITE_BASE || (command === 'build' ? '/Michele-Ferreira---Web-Site/' : '/'),
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
