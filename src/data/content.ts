@@ -26,8 +26,61 @@ export interface Testimonial {
   id: string;
   quote: string;
   author: string;
-  location: string;
+  location?: string;
 }
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: 'natalia',
+    quote: '"A Michele é uma profissional incrível! Transmite muita segurança, empatia e cuidado em cada atendimento. Sua forma de acolher faz toda diferença e mostra o quanto ela realmente se dedica aos pacientes. Recomendo seu trabalho com toda certeza ❤️"',
+    author: 'Natalia'
+  },
+  {
+    id: 'isabelle-medeiros',
+    quote: '"Excelente profissional. O atendimento é organizado e acolhedor, proporcionando um ambiente seguro e de confiança. Recomendo demais o trabalho."',
+    author: 'Isabelle Medeiros Ferreira'
+  },
+  {
+    id: 'valeria',
+    quote: '"Estou em tratamento com a Doutora Michele há 8 meses, ela é uma profissional incrível e acolhedora."',
+    author: 'Valéria'
+  },
+  {
+    id: 'aline',
+    quote: '"Excelente profissional!! Muito atenciosa e tem um ótimo jeito de te auxiliar a lidar melhor com tudo."',
+    author: 'Aline Souza'
+  },
+  {
+    id: 'maria-gilvaneide',
+    quote: '"Minha experiência foi ótima, meu atendimento com a psicóloga Michele Ferreira de Souza, super atenciosa, ótima profissional, me sinto bem durante as consultas."',
+    author: 'Maria Gilvaneide'
+  },
+  {
+    id: 'bruna',
+    quote: '"Michele é uma excelente profissional, muito acolhedora e dedicada. Indico muito!"',
+    author: 'Bruna Sousa'
+  },
+  {
+    id: 'isabelle-flor',
+    quote: '"Ótima profissional! Gostei muito e me identifiquei demais! Recomendo."',
+    author: 'Isabelle Flor'
+  },
+  {
+    id: 'natalia-ramalho',
+    quote: '"Super recomendo, psicóloga super atenciosa, ótimo atendimento."',
+    author: 'Natalia Ramalho'
+  },
+  {
+    id: 'simone',
+    quote: '"Profissional excelente, de uma sensibilidade incrível e extraordinária. Tem me ajudado imensamente no processo de superação do luto e nos momentos mais difíceis da minha vida. Sou muito grata por todo o acolhimento."',
+    author: 'Simone M.'
+  },
+  {
+    id: 'murillo',
+    quote: '"Não tenho palavras para agradecer essa excelente profissional! Obrigado Michele por suas sessões de terapias que me ajudaram muito!!"',
+    author: 'Murillo Souza'
+  }
+];
 
 export const CLINICAL_INFO = {
   name: 'Michele Ferreira',
@@ -156,69 +209,6 @@ export const REFLECTIONS: ReflectionArticle[] = [
       'Muitos brasileiros no exterior relatam a sensação de não pertencer mais completamente ao Brasil, mas também de nunca pertencer por inteiro ao novo país. Esse entrelugar gera um cansaço emocional profundo, agravado pela solidão de não poder desabafar em sua língua nativa.',
       'O atendimento psicológico em português para quem vive fora reconstrói uma ponte afetiva com as próprias origens, oferecendo suporte especializado para lidar com o choque cultural e ressignificar o pertencimento em qualquer parte do globo.'
     ]
-  }
-];
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    id: 'simone',
-    quote: '"Profissional excelente, de uma sensibilidade incrível e extraordinária. Tem me ajudado imensamente no processo de superação do luto e nos momentos mais difíceis da minha vida. Sou muito grata por todo o acolhimento."',
-    author: 'Simone M.',
-    location: 'Avaliação Verificada no Google Maps'
-  },
-  {
-    id: 'paciente-8-meses',
-    quote: '"Estou em acompanhamento com a Michele há 8 meses e posso dizer que ela é uma profissional incrível e extremamente acolhedora. Me sinto ouvida sem julgamentos e vejo transformações reais na minha vida e no manejo da ansiedade."',
-    author: 'Paciente Verificado(a)',
-    location: 'Avaliação Verificada no Google Maps'
-  },
-  {
-    id: 'fernanda',
-    quote: '"Profissional impecável, muito ética, pontual e ao mesmo tempo afetuosa e humana. A Michele tem uma escuta tão atenta e calma que desde o primeiro encontro me senti completamente segura. Recomendo de olhos fechados."',
-    author: 'Fernanda T.',
-    location: 'Avaliação Verificada no Google Maps'
-  },
-  {
-    id: 'rodrigo',
-    quote: '"Morar fora do Brasil trouxe uma carga emocional pesada. Encontrar a Michele me deu o suporte acolhedor na minha língua materna que eu precisava. O processo tem sido essencial para a minha adaptação e equilíbrio emocional."',
-    author: 'Rodrigo M.',
-    location: 'Avaliação Verificada no Google Maps'
-  },
-  {
-    id: 'camila',
-    quote: '"Cheguei com crises frequentes de ansiedade e me sentindo perdida. A Michele me ajudou a desacelerar, compreender meus gatilhos e construir limites saudáveis. Hoje vivo com muito mais leveza e segurança interna."',
-    author: 'Camila R.',
-    location: 'Avaliação Verificada no Google Maps'
-  },
-  {
-    id: 'lucas',
-    quote: '"Excelente psicóloga! As intervenções dela são muito precisas, respeitosas e no meu tempo. A abordagem fenomenológica me fez enxergar minhas decisões e conflitos de uma maneira muito mais clara e autônoma."',
-    author: 'Lucas P.',
-    location: 'Avaliação Verificada no Google Maps'
-  },
-  {
-    id: 'beatriz',
-    quote: '"Espaço terapêutico de puro respeito e empatia. Trabalhar minha autoestima e a dependência emocional com a Michele tem sido um divisor de águas. Me sinto acolhida de verdade a cada sessão."',
-    author: 'Beatriz S.',
-    location: 'Avaliação Verificada no Google Maps'
-  },
-  {
-    id: 'mariana',
-    quote: '"Fazer terapia online com a Michele é tão próximo e acolhedor quanto presencialmente. Ela tem uma sensibilidade rara para escutar o que não conseguimos dizer com clareza. Sou muito grata pelo acompanhamento."',
-    author: 'Mariana C.',
-    location: 'Avaliação Verificada no Google Maps'
-  },
-  {
-    id: 'gabriel',
-    quote: '"Iniciei o processo em um momento de transição de carreira difícil e angústia constante. A Michele foi fundamental para que eu reencontrasse meu norte sem me perder nas expectativas alheias. Super recomendo!"',
-    author: 'Gabriel A.',
-    location: 'Avaliação Verificada no Google Maps'
-  },
-  {
-    id: 'juliana',
-    quote: '"Uma profissional dedicada, empática e ética. Me sinto ouvida sem nenhuma pressa e sem pré-julgamentos. A terapia tem me ajudado a ressignificar momentos difíceis e a me acolher com mais gentileza."',
-    author: 'Juliana F.',
-    location: 'Avaliação Verificada no Google Maps'
   }
 ];
 

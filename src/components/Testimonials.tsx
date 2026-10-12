@@ -71,7 +71,7 @@ export const Testimonials: React.FC = () => {
                 ))}
               </div>
               <span className="font-sans text-xs font-semibold text-[#1d1b17] tracking-wide">
-                5.0 · Google Avaliações Verificadas (10 relatos)
+                5.0 · 35 avaliações no Google
               </span>
               <ExternalLink className="w-3.5 h-3.5 text-[#485e4a] opacity-70 group-hover:opacity-100 transition-opacity ml-0.5" />
             </a>
@@ -80,7 +80,7 @@ export const Testimonials: React.FC = () => {
               Relatos de quem encontrou acolhimento
             </h2>
             <p className="font-sans text-base text-[#434842] mt-2">
-              Trechos e avaliações reais de pacientes atendidos pela psicóloga Michele no Google Maps.
+              Trechos e avaliações reais de pacientes atendidos pela psicóloga Michele.
             </p>
           </div>
 
@@ -154,18 +154,10 @@ export const Testimonials: React.FC = () => {
                     </p>
                   </div>
 
-                  {/* Footer with Author and Google Badge */}
-                  <div className="pt-4 border-t border-[#c3c8c0]/30 flex items-center justify-between">
-                    <div>
-                      <span className="font-sans text-sm font-semibold text-[#1d1b17] block">
-                        {item.author}
-                      </span>
-                      <span className="font-sans text-xs text-[#434842]">
-                        {item.location}
-                      </span>
-                    </div>
-                    <span className="text-[11px] font-mono text-[#485e4a] bg-[#d0e5d8]/60 px-2 py-0.5 rounded font-medium">
-                      Google Maps
+                  {/* Footer with Author only */}
+                  <div className="pt-4 border-t border-[#c3c8c0]/30">
+                    <span className="font-sans text-sm font-semibold text-[#1d1b17] block">
+                      {item.author}
                     </span>
                   </div>
                 </div>
@@ -191,7 +183,7 @@ export const Testimonials: React.FC = () => {
           ))}
         </div>
 
-        {/* Bottom CTA to View All on Google Maps */}
+        {/* Bottom CTA to View All */}
         <div className="mt-10 text-center">
           <a
             href={CLINICAL_INFO.googleMapsUrl}
@@ -199,7 +191,7 @@ export const Testimonials: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#485e4a] hover:text-[#3b4d3c] hover:underline"
           >
-            <span>Ver perfil e todas as avaliações no Google Maps</span>
+            <span>Ver perfil e todas as avaliações</span>
             <ExternalLink className="w-4 h-4" />
           </a>
         </div>
