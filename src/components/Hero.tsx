@@ -7,16 +7,18 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
-  const [imageSrc, setImageSrc] = useState('/michele-ferreira-enhanced.webp');
+  const defaultPhoto = `${import.meta.env.BASE_URL}michele-ferreira-enhanced.webp`;
+  const fallbackLocalPhoto = `${import.meta.env.BASE_URL}michele-ferreira.webp`;
+  const [imageSrc, setImageSrc] = useState(defaultPhoto);
   const [customPhotoModalOpen, setCustomPhotoModalOpen] = useState(false);
   const [inputUrl, setInputUrl] = useState('');
   const [imageError, setImageError] = useState(false);
 
   const handleImageError = () => {
     // Cascade fallbacks
-    if (imageSrc === '/michele-ferreira-enhanced.webp') {
-      setImageSrc('/michele-ferreira.webp');
-    } else if (imageSrc === '/michele-ferreira.webp') {
+    if (imageSrc === defaultPhoto) {
+      setImageSrc(fallbackLocalPhoto);
+    } else if (imageSrc === fallbackLocalPhoto) {
       setImageSrc('https://s3-sa-east-1.amazonaws.com/psymeet-social/media/psicologos/michele-ferreira-de-souza.webp');
     } else {
       setImageError(true);
@@ -246,7 +248,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 <button
                   type="button"
                   onClick={() => {
-                    setImageSrc('/michele-ferreira-enhanced.webp');
+                    setImageSrc(defaultPhoto);
                     setImageError(false);
                     setCustomPhotoModalOpen(false);
                   }}
