@@ -17,6 +17,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { Modals } from './components/Modals';
+import { ReadingProgressBar } from './components/ReadingProgressBar';
 import { ReflectionArticle, Specialty } from './data/content';
 
 export default function App() {
@@ -47,6 +48,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#fef9f1] text-[#1d1b17] flex flex-col font-sans selection:bg-[#d0e5d8] selection:text-[#0b2010]">
+      {/* 0. Barra Fina de Progresso de Rolagem (2px Verde-Botânica) */}
+      <ReadingProgressBar />
+
       {/* 1. Header (Navegação Fixa) */}
       <Header onOpenBooking={handleOpenBooking} />
 

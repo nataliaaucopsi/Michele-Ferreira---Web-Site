@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nataliaaucopsi.github.io/Michele-Ferreira---Web-Site/sitemap.xml

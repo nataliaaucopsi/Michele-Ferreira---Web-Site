@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Award, GraduationCap, CheckCircle2, Clock, ChevronRight, BookOpen, Users, Compass } from 'lucide-react';
+import { FadeIn } from './FadeIn';
 
 export const AboutMe: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'trabalho' | 'exterior' | 'publico'>('trabalho');
@@ -9,7 +10,7 @@ export const AboutMe: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left: Editorial Quote & Philosophy */}
-          <div className="lg:col-span-5 space-y-5">
+          <FadeIn className="lg:col-span-5 space-y-5">
             <span className="font-mono text-xs text-[#485e4a] tracking-widest uppercase block font-semibold">
               Sobre Mim
             </span>
@@ -67,10 +68,10 @@ export const AboutMe: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Right: Interactive Thematic Tabs */}
-          <div className="lg:col-span-7 bg-white p-8 md:p-10 rounded-xl border border-[#c3c8c0]/50 shadow-2xs">
+          <FadeIn delay={0.15} className="lg:col-span-7 bg-white p-8 md:p-10 rounded-xl border border-[#c3c8c0]/50 shadow-2xs">
             {/* Tab Navigation */}
             <div className="flex border-b border-[#c3c8c0]/40 gap-6 mb-8 overflow-x-auto pb-2">
               <button
@@ -223,7 +224,7 @@ export const AboutMe: React.FC = () => {
                 </ul>
               </div>
             )}
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>

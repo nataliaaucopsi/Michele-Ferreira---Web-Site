@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Star, ExternalLink, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import { TESTIMONIALS, CLINICAL_INFO } from '../data/content';
+import { FadeIn } from './FadeIn';
 
 export const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -57,7 +58,7 @@ export const Testimonials: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <FadeIn className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <a
               href={CLINICAL_INFO.googleMapsUrl}
@@ -118,7 +119,7 @@ export const Testimonials: React.FC = () => {
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
-        </div>
+        </FadeIn>
 
         {/* Carousel Viewport & Sliding Track */}
         <div className="relative overflow-hidden py-2">

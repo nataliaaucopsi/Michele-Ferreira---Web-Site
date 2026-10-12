@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, ArrowRight, ShieldCheck, Globe, Brain, Camera, Check, X } from 'lucide-react';
 import { CLINICAL_INFO } from '../data/content';
+import { FadeIn } from './FadeIn';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -53,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
     <section className="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28 border-b border-[#c3c8c0]/30 bg-[#fef9f1]">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Left Editorial Column */}
-        <div className="lg:col-span-7 flex flex-col items-start space-y-6">
+        <FadeIn duration={0.7} className="lg:col-span-7 flex flex-col items-start space-y-6">
           {/* Regulatory Tag / Kicker */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#ece7e1] border border-[#c3c8c0]/50 shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-[#607762] animate-pulse"></span>
@@ -104,10 +105,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               <span className="font-medium">Brasileiros no Mundo Todo</span>
             </div>
           </div>
-        </div>
+        </FadeIn>
 
         {/* Right Column: Visual Portrait Card (Fotografia Profissional em Alta Qualidade) */}
-        <div className="lg:col-span-5 relative">
+        <FadeIn delay={0.2} duration={0.7} className="lg:col-span-5 relative">
           <div className="relative mx-auto max-w-md lg:max-w-none">
             {/* Background botanical glow frame */}
             <div className="absolute -inset-3 bg-[#d0e5d8]/40 rounded-2xl -rotate-1 transform -z-10 pointer-events-none"></div>
@@ -178,7 +179,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               </div>
             </div>
           </div>
-        </div>
+        </FadeIn>
       </div>
 
       {/* Modal para trocar/atualizar foto caso a psicóloga deseje anexar seu ensaio */}

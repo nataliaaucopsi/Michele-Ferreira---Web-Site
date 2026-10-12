@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { MessageCircle, Mail, User, Instagram, MapPin, Send, Check, Phone } from 'lucide-react';
+import { MessageCircle, User, Instagram, MapPin, Send, Check, Phone } from 'lucide-react';
 import { CLINICAL_INFO } from '../data/content';
+import { FadeIn } from './FadeIn';
 
 export const Contact: React.FC = () => {
   const [name, setName] = useState('');
   const [preferredShift, setPreferredShift] = useState('tarde');
   const [modality, setModality] = useState('online');
   const [message, setMessage] = useState('');
-  const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
 
   const handleWhatsAppDirect = () => {
@@ -20,12 +20,6 @@ export const Contact: React.FC = () => {
     }
     const url = `https://wa.me/${CLINICAL_INFO.whatsappUrl}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(CLINICAL_INFO.email);
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2500);
   };
 
   const handleCopyPhone = () => {
@@ -43,7 +37,7 @@ export const Contact: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10">
             {/* Left Column: Proposition & Actions */}
-            <div className="lg:col-span-7 space-y-6">
+            <FadeIn className="lg:col-span-7 space-y-6">
               <span className="font-mono text-xs text-[#485e4a] tracking-widest uppercase block font-semibold">
                 Vamos Conversar?
               </span>
@@ -56,34 +50,16 @@ export const Contact: React.FC = () => {
                 Estou à disposição para responder qualquer dúvida sobre as sessões ou para encontrar um horário conveniente para você.
               </p>
 
-              {/* Direct Buttons from Layout */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              {/* Direct WhatsApp Action Button */}
+              <div className="pt-2">
                 <button
                   type="button"
                   onClick={handleWhatsAppDirect}
-                  className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20ba59] text-white px-7 py-4 rounded-lg font-sans text-sm font-semibold shadow-sm transition-all duration-200 cursor-pointer active:scale-[0.98]"
+                  className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20ba59] text-white px-8 py-4 rounded-lg font-sans text-sm sm:text-base font-semibold shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer active:scale-[0.98] w-full sm:w-auto"
                 >
                   <MessageCircle className="w-5 h-5" />
                   <span>Falar no WhatsApp: {CLINICAL_INFO.phoneDisplay}</span>
                 </button>
-
-                <div className="flex items-center gap-2">
-                  <a
-                    href={`mailto:${CLINICAL_INFO.email}`}
-                    className="inline-flex items-center justify-center gap-2.5 bg-[#f2ede6] hover:bg-[#ece7e1] text-[#1d1b17] px-6 py-4 rounded-lg border border-[#c3c8c0]/60 font-sans text-sm font-semibold transition-colors duration-200 flex-1 sm:flex-initial"
-                  >
-                    <Mail className="w-4 h-4 text-[#485e4a]" />
-                    <span>{CLINICAL_INFO.email}</span>
-                  </a>
-                  <button
-                    type="button"
-                    onClick={handleCopyEmail}
-                    title="Copiar e-mail"
-                    className="p-4 rounded-lg bg-[#f2ede6] hover:bg-[#ece7e1] border border-[#c3c8c0]/60 text-[#485e4a] transition-colors cursor-pointer"
-                  >
-                    {copiedEmail ? <Check className="w-4 h-4 text-emerald-600" /> : <Mail className="w-4 h-4" />}
-                  </button>
-                </div>
               </div>
 
               {/* Quick Inquiry Assistant */}
@@ -143,10 +119,10 @@ export const Contact: React.FC = () => {
                   <span>Enviar mensagem personalizada</span>
                 </button>
               </div>
-            </div>
+            </FadeIn>
 
             {/* Right Column: Contact Details Card */}
-            <div className="lg:col-span-5 bg-[#f8f3ec] p-8 rounded-xl border border-[#c3c8c0]/40 space-y-6 w-full">
+            <FadeIn delay={0.15} className="lg:col-span-5 bg-[#f8f3ec] p-8 rounded-xl border border-[#c3c8c0]/40 space-y-6 w-full">
               <h4 className="font-serif text-2xl text-[#1d1b17] font-medium">
                 Informações de Contato
               </h4>
@@ -236,7 +212,7 @@ export const Contact: React.FC = () => {
               <div className="pt-4 border-t border-[#c3c8c0]/30 text-xs font-mono text-[#434842]/80">
                 Atendimento mediante agendamento prévio.
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </div>
